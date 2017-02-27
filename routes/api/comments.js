@@ -26,8 +26,8 @@ router.route('/:id').get(function(req, res, next){
 router.route("/").post(function (req, res, next) {
   knex('comments')
   .insert({
-    content: req.body.content
-    dream_id: req.body.dream_id
+    content: req.body.content,
+    dream_id: req.body.dream_id,
     user_id: req.body.user_id
   })
   .returning(["*"])
