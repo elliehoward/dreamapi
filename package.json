@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/elliehoward/dreamapi/issues"
   },
-  "homepage": "https://github.com/elliehoward/dreamapi#readme"
+  "homepage": "https://github.com/elliehoward/dreamapi#readme",
+  "dependencies": {
+    "bcrypt-as-promised": "^1.1.0",
+    "body-parser": "^1.16.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.14.1",
+    "express-session": "^1.15.1",
+    "knex": "^0.12.7",
+    "pg": "^6.1.2"
+  }
 }
