@@ -8,14 +8,14 @@ exports.seed = function(knex, Promise) {
           {
             name: 'Galvanize is really the matrix.',
             description: 'I had a dream where I was working on the computers in the lab at Galvanize and when my cohort would work on the computers I remember feeling like the monitors sucked us into a train ride somewhere else outside that would not stop and I remember trying to help someone that was falling off and they dragged themselves up, despite the pain they were going through trying to get back on the train. Later we were on the train again and that same person got left behind. When we got to our destination we found ourselves inside giant containers full of some kind of purple gel. It was much like when Neo woke up in the matrix, only in a very green area outdoors. Maybe a patio that reminded me of some kind of mario level. I saw my sister and she looked at me and told me with her eyes that she knew all this had been going on and she was helping. I felt shocked.',
-            dream_image_url: 'images/dreams/guard.jpg',
+            dream_image_url: 'images/dreams/matrix.jpeg',
             date: '2/22/17',
             user_id: 3
           },
           {
             name: 'Spiders were everywhere!',
             description: 'I dreamed that my sister and I were trapped in my old house and it was filled with spiders. They would come in waves. We had to escape while the spiders were gone, and hide under tissues in my closet if the spiders came out. They would crawl over everything. I remember looking for my sister when the spiders left but I could not find her. I woke up before making it outdoors.',
-            dream_image_url: 'images/dreams/lilmichael.jpg',
+            dream_image_url: 'images/dreams/spiderweb.jpeg',
             date: '2/23/17',
             user_id: 1
           },
