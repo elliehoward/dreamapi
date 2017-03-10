@@ -31,9 +31,10 @@ router.route("/").post(function (req, res, next) {
     dream_image_url: req.body.imageURL,
     user_id: req.body.user_id
   })
-  .returning(["*"])
+  .returning(["id", "name", "description", "dream_image_url", "user_id"])
   .then(function (dreams) {
-    res.json(dreams[0]);
+    res.setHeader("Content-Type", "application/json");
+    res.json(dreams);
   })
   .catch(function (err) {
       next(new Error(err));
