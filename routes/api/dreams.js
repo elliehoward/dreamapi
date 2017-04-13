@@ -44,7 +44,7 @@ router.route("/").post(function (req, res, next) {
     });
 });
 
-router.route('/').patch(function(req, res, next) {
+router.route('/').put(function(req, res, next) {
   var dreamId = req.body.id;
   knex("dreams")
   .where('id', dreamId)
