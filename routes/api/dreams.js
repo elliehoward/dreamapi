@@ -24,7 +24,6 @@ router.route('/:id').get(function(req, res, next){
 });
 
 router.route("/").post(function (req, res, next) {
-    console.log(req.body, 'i am the body')
   knex('dreams')
   .insert({
     id: req.body.id,
@@ -67,7 +66,6 @@ router.route('/').put(function(req, res, next) {
 
 router.route('/upvote').post(function(req, res, next) {
   var dreamId = req.body.id;
-  console.log(req.body);
   knex("dreams")
   .where('id', dreamId)
   .update({
