@@ -27,7 +27,7 @@ router.route("/").post(function (req, res, next) {
   knex('dreams')
   .insert({
     id: req.body.id,
-    title: req.body.name,
+    title: req.body.title,
     description: req.body.description,
     dream_image_url: req.body.dreamImg,
     private: false,
