@@ -64,7 +64,7 @@ router.route('/').patch(function(req, res, next) {
     });
 })
 
-router.route('/upvote').patch(function(req, res, next) {
+router.route('/upvote').post(function(req, res, next) {
   var dreamId = req.body.id;
   knex("dreams")
   .where('id', dreamId)
@@ -80,7 +80,7 @@ router.route('/upvote').patch(function(req, res, next) {
     });
 })
 
-router.route('/downvote').patch(function(req, res, next) {
+router.route('/downvote').post(function(req, res, next) {
   var dreamId = req.body.id;
   knex("dreams")
   .where('id', dreamId)
