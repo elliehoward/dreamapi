@@ -6,7 +6,7 @@ const knex = require('../../knex');
 
 router.route('/').get(function(req, res, next){
     knex('dreams')
-    .orderBy('id').then(function(dreams){
+    .orderBy('votes').then(function(dreams){
         res.json(dreams);
     }).catch(function(err){
         next(new Error(err));
@@ -26,12 +26,15 @@ router.route('/:id').get(function(req, res, next){
 router.route("/").post(function (req, res, next) {
   knex('dreams')
   .insert({
-    name: req.body.name,
+    id: req.body.id,
+    title: req.body.name,
     description: req.body.description,
-    dream_image_url: req.body.imageURL,
-    user_id: req.body.user_id
+    dream_image_url: req.body.dreamImg,
+    private: false,
+    date: req.body.date,
+    votes: req.body.votes || 0
   })
-  .returning(["id", "name", "description", "dream_image_url", "user_id"])
+  .returning("*")
   .then(function (dreams) {
     res.setHeader("Content-Type", "application/json");
     res.json(dreams);

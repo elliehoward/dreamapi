@@ -34,11 +34,10 @@ app.use(allowCrossDomain);
 
 app.use("/api/users", routes.users);
 app.use("/api/dreams", routes.dreams);
-app.use("/api/comments", routes.comments);
 
-app.get('/', function(req, res){
-    res.render("index", {req});
-});
+// app.get('/', function(req, res){
+//     res.render("index", {req});
+// });
 
 
 
