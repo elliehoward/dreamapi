@@ -24,6 +24,7 @@ router.route('/:id').get(function(req, res, next){
 });
 
 router.route("/").post(function (req, res, next) {
+    console.log(req.body, 'i am the body')
   knex('dreams')
   .insert({
     id: req.body.id,
