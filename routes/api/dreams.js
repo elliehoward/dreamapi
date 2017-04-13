@@ -98,7 +98,7 @@ router.route('/downvote').patch(function(req, res, next) {
 
 
 router.route("/").delete(function (req, res, next) {
-  let dreamId = Number(req.body.id);
+  let dreamId = req.body.id;
   knex("dreams")
   .where("id", "=", dreamId)
   .del()
