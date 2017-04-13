@@ -45,7 +45,7 @@ router.route("/").post(function (req, res, next) {
 });
 
 router.route('/').patch(function(req, res, next) {
-  var dreamId =  Number(req.body.id);
+  var dreamId = req.body.id;
   knex("dreams")
   .where('id', dreamId)
   .update({
@@ -65,7 +65,7 @@ router.route('/').patch(function(req, res, next) {
 })
 
 router.route('/upvote').patch(function(req, res, next) {
-  var dreamId =  Number(req.body.id);
+  var dreamId = req.body.id;
   knex("dreams")
   .where('id', dreamId)
   .update({
@@ -81,7 +81,7 @@ router.route('/upvote').patch(function(req, res, next) {
 })
 
 router.route('/downvote').patch(function(req, res, next) {
-  var dreamId =  Number(req.body.id);
+  var dreamId = req.body.id;
   knex("dreams")
   .where('id', dreamId)
   .update({
