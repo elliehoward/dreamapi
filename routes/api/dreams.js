@@ -67,6 +67,7 @@ router.route('/').put(function(req, res, next) {
 
 router.route('/upvote').post(function(req, res, next) {
   var dreamId = req.body.id;
+  console.log(req.body);
   knex("dreams")
   .where('id', dreamId)
   .update({
