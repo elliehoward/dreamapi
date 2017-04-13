@@ -14,7 +14,7 @@ router.route('/').get(function(req, res, next){
 });
 
 router.route('/:id').get(function(req, res, next){
-    var dreamId =  Number(req.params.id);
+    var dreamId =  req.params.id;
     knex('dreams').where('id', dreamId)
     .then(function(specificDream){
         res.json(specificDream);
@@ -70,7 +70,7 @@ router.route('/upvote').post(function(req, res, next) {
   knex("dreams")
   .where('id', dreamId)
   .update({
-    votes: req.body.votes + 1
+    votes: Number(req.body.votes) + 1
   })
   .returning("*")
   .then(function (dreams) {
@@ -86,7 +86,7 @@ router.route('/downvote').post(function(req, res, next) {
   knex("dreams")
   .where('id', dreamId)
   .update({
-    votes: req.body.votes - 1
+    votes: Number(req.body.votes) - 1
   })
   .returning("*")
   .then(function (dreams) {
