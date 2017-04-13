@@ -33,7 +33,7 @@ router.route("/").post(function (req, res, next) {
     dream_image_url: req.body.dreamImg,
     private: false,
     date: req.body.date,
-    votes: req.body.votes || 0
+    votes: 0
   })
   .returning("*")
   .then(function (dreams) {
