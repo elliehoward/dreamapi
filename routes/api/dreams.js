@@ -44,13 +44,64 @@ router.route("/").post(function (req, res, next) {
     });
 });
 
+router.route('/').patch(function(req, res, next) {
+  var dreamId =  Number(req.body.id);
+  knex("dreams")
+  .where('id', dreamId)
+  .update({
+    title: req.body.title,
+    description: req.body.description,
+    date: req.body.date,
+    private: req.body.private,
+    dream_image_url: req.body.dreamImg
+  })
+  .returning("*")
+  .then(function (dreams) {
+    res.json(dreams[0]);
+  })
+  .catch(function (err) {
+      next(new Error(err));
+    });
+})
 
-router.route("/:id").delete(function (req, res, next) {
-  let dreamId = Number(req.params.id);
+router.route('/upvote').patch(function(req, res, next) {
+  var dreamId =  Number(req.body.id);
+  knex("dreams")
+  .where('id', dreamId)
+  .update({
+    votes: req.body.votes + 1
+  })
+  .returning("*")
+  .then(function (dreams) {
+    res.json(dreams[0]);
+  })
+  .catch(function (err) {
+      next(new Error(err));
+    });
+})
+
+router.route('/downvote').patch(function(req, res, next) {
+  var dreamId =  Number(req.body.id);
+  knex("dreams")
+  .where('id', dreamId)
+  .update({
+    votes: req.body.votes - 1
+  })
+  .returning("*")
+  .then(function (dreams) {
+    res.json(dreams[0]);
+  })
+  .catch(function (err) {
+      next(new Error(err));
+    });
+})
+
+
+router.route("/").delete(function (req, res, next) {
+  let dreamId = Number(req.body.id);
   knex("dreams")
   .where("id", "=", dreamId)
   .del()
-  .returning(["name"])
   .then(function (dream) {
     res.json(dream[0]);
   })
