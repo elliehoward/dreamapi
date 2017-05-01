@@ -18,7 +18,7 @@ app.use(expressSession({secret:process.env.COOKIE_SECRET}));
 //
 // see: http://stackoverflow.com/questions/7067966/how-to-allow-cors-in-express-nodejs
 var allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://dreamhub.herokuapp.com');
+    res.header('Access-Control-Allow-Origin', 'http://dreamhub.herokuapp.com', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     res.header('Access-Control-Allow-Credentials', true);
